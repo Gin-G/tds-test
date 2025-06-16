@@ -28,10 +28,6 @@ spec:
       containers:
       - name: {{ .Values.webapp.name }}
         image: {{ .Values.webapp.container.image }}
-        resources:
-          limits:
-            memory: {{ .Values.webapp.container.memory }}
-            cpu: {{ .Values.webapp.container.cpu }}
         ports:
         - containerPort: {{ .Values.webapp.container.port }}
         volumeMounts:
@@ -42,10 +38,6 @@ spec:
       # Logs container
       - name: {{ .Values.webapp.logs.name }}
         image: {{ .Values.webapp.logs.image }}
-        resources:
-          limits:
-            memory: {{ .Values.webapp.logs.memory }}
-            cpu: {{ .Values.webapp.logs.cpu }}
         ports:
         - containerPort: {{ .Values.webapp.logs.port }}
         volumeMounts:
